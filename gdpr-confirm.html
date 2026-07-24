@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bekräfta radering — KEKI Renovering AB</title>
+  <meta name="description" content="Bekräftar radering av dina personuppgifter hos KEKI Renovering AB enligt GDPR artikel 17.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1E211C">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .gdpr-card{max-width:560px;margin:0 auto;text-align:center}
+    .gdpr-card h3{font-family:var(--serif);font-weight:600;font-size:24px;margin:18px 0 0;color:var(--on-pine)}
+    .gdpr-card p{margin:12px 0 0;color:var(--on-pine-soft);font-size:15.5px;line-height:1.6}
+    .gdpr-card ul{text-align:left;margin:16px 0 0;padding-left:20px;color:var(--on-pine-soft);font-size:15px;line-height:1.7}
+    .gdpr-card .btn{margin-top:24px}
+    .gdpr-card .btnrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+    .gdpr-spinner{width:44px;height:44px;border:4px solid var(--pine-line);border-top:4px solid var(--brand);border-radius:50%;
+      margin:0 auto;animation:gdpr-spin 0.9s linear infinite}
+    @keyframes gdpr-spin{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion:reduce){.gdpr-spinner{animation:none}}
+  </style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site" id="top">
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="KEKI Renovering AB — till startsidan">
+      <picture>
+        <source srcset="assets/images/keki-transparent.avif" type="image/avif">
+        <img src="assets/images/keki-transparent.webp" srcset="assets/images/keki-transparent.webp 1x, assets/images/keki-transparent@2x.webp 2x" alt="KEKI Renovering AB" width="88" height="88">
+      </picture>
+    </a>
+    <nav class="links" aria-label="Huvudmeny">
+      <a href="index.html#tjanster">Tjänster</a>
+      <a href="index.html#projekt">Projekt</a>
+      <a href="rot-avdrag.html">ROT-avdrag</a>
+      <a href="about.html">Om oss</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+    <div class="spacer"></div>
+    <a class="tel" href="tel:+46764271727">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      076 427 17 27
+    </a>
+    <a class="btn btn-primary" href="index.html#kontakt">Få offert</a>
+    <button class="menu-btn" aria-label="Öppna meny" id="openMenu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="dtop">
+    <picture>
+      <source srcset="assets/images/keki-transparent.avif" type="image/avif">
+      <img src="assets/images/keki-transparent.webp" alt="KEKI Renovering AB" width="76" height="76">
+    </picture>
+    <button class="dclose" aria-label="Stäng meny" id="closeMenu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <nav aria-label="Mobilmeny">
+    <a href="index.html#tjanster" data-close>Tjänster</a>
+    <a href="index.html#projekt" data-close>Projekt</a>
+    <a href="rot-avdrag.html" data-close>ROT-avdrag</a>
+    <a href="about.html" data-close>Om oss</a>
+    <a href="faq.html" data-close>FAQ</a>
+    <a href="index.html#kontakt" data-close>Kontakt</a>
+  </nav>
+  <a class="btn btn-primary btn-lg" href="index.html#kontakt" data-close>Få kostnadsfri offert</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Hem</a><span>/</span>Bekräfta radering</div>
+    <span class="eyebrow">GDPR · Bekräftelse</span>
+    <h1>Bekräftar radering av dina uppgifter</h1>
+  </div>
+</section>
+
+<!-- ============ STATUSKORT ============ -->
+<section class="contact">
+  <div class="wrap">
+    <div class="qform gdpr-card reveal" id="gdprCard">
+
+      <div id="gdprLoading">
+        <div class="gdpr-spinner" aria-hidden="true"></div>
+        <h3>Bekräftar radering…</h3>
+        <p>Vänligen vänta medan vi raderar dina uppgifter.</p>
+      </div>
+
+      <div id="gdprSuccess" hidden>
+        <div class="check" style="width:56px;height:56px;border-radius:50%;background:var(--brand);display:grid;place-items:center;margin:0 auto"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" style="width:28px;height:28px;stroke:var(--on-brand)"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Dina uppgifter har raderats</h3>
+        <p>Alla dina personuppgifter har framgångsrikt raderats från våra system.</p>
+        <p><strong style="color:var(--on-pine)">Vad har hänt:</strong></p>
+        <ul>
+          <li>Alla dina personuppgifter har raderats</li>
+          <li>Du kommer inte längre få marknadsföring från oss</li>
+          <li>Dina gamla omdömen och bilder är borttagna</li>
+          <li>Alla sparade kontaktuppgifter har raderats</li>
+        </ul>
+        <p>Tack för att du använde din rätt enligt GDPR! Om du vill använda våra tjänster igen i framtiden är du välkommen att kontakta oss.</p>
+        <a class="btn btn-primary" href="index.html">Tillbaka till startsidan</a>
+      </div>
+
+      <div id="gdprError" hidden>
+        <h3 style="color:#F0B9A4">Ett fel uppstod</h3>
+        <p id="gdprErrorText" style="color:#F0B9A4"></p>
+        <p><strong style="color:var(--on-pine)">Möjliga orsaker:</strong></p>
+        <ul>
+          <li>Länken har gått ut (giltig i 24 timmar)</li>
+          <li>Länken har redan använts</li>
+          <li>Ogiltig eller korrupt länk</li>
+        </ul>
+        <p>Försök att begära radering igen, eller kontakta oss på <a href="tel:+46764271727" style="color:var(--brand)">076&nbsp;427&nbsp;17&nbsp;27</a> eller <a href="mailto:info@kekirenovering.se" style="color:var(--brand)">info@kekirenovering.se</a> för hjälp.</p>
+        <div class="btnrow">
+          <a class="btn btn-primary" href="radera-mina-uppgifter.html">Försök igen</a>
+          <a class="btn btn-ghost" href="index.html">Startsida</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <picture>
+          <source srcset="assets/images/keki-transparent.avif" type="image/avif">
+          <img src="assets/images/keki-transparent.webp" alt="KEKI Renovering AB" width="120" height="120" loading="lazy">
+        </picture>
+        <p class="about">Professionell renovering, snickeri och byggservice i Järfälla och Stockholm — för privatpersoner och företag.</p>
+      </div>
+      <div>
+        <h4>Tjänster</h4>
+        <ul><li><a href="index.html#tjanster">Kök</a></li><li><a href="index.html#tjanster">Snickeri</a></li><li><a href="index.html#tjanster">Altan</a></li><li><a href="index.html#tjanster">Golvläggning</a></li><li><a href="index.html#tjanster">Målning</a></li><li><a href="index.html#tjanster">Takrenovering</a></li><li><a href="index.html#tjanster">Små fix</a></li></ul>
+      </div>
+      <div>
+        <h4>Kundservice</h4>
+        <ul>
+          <li><a href="index.html#kontakt">Få offert</a></li>
+          <li><a href="about.html">Om oss</a></li>
+          <li><a href="rot-avdrag.html">Om ROT-avdrag</a></li>
+          <li><a href="faq.html">Vanliga frågor</a></li>
+          <li><a href="lamna-omdome.html">Lämna omdöme</a></li>
+          <li><a href="privacy-policy.html">Integritetspolicy</a></li>
+          <li><a href="radera-mina-uppgifter.html">Radera mina uppgifter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul><li><a href="tel:+46764271727">076 427 17 27</a></li><li><a href="mailto:info@kekirenovering.se">info@kekirenovering.se</a></li><li>Järfälla &amp; Stockholm</li><li>Vardagar 08–17</li></ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© <span id="year">2026</span> KEKI Renovering AB. Alla rättigheter förbehållna.</span>
+      <div class="soc">
+        <a href="https://www.instagram.com/kekirenovering" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="tel:+46764271727" aria-label="Ring oss"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></a>
+        <a href="mailto:info@kekirenovering.se" aria-label="Maila oss"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script>
+(function () {
+  'use strict';
+  var API_BASE = 'https://mf-stonedesign-api-gghedbdmdcbhhvf0.northeurope-01.azurewebsites.net/api';
+
+  var loadingEl = document.getElementById('gdprLoading');
+  var successEl = document.getElementById('gdprSuccess');
+  var errorEl = document.getElementById('gdprError');
+  var errorTextEl = document.getElementById('gdprErrorText');
+
+  function showSuccess() {
+    loadingEl.hidden = true;
+    errorEl.hidden = true;
+    successEl.hidden = false;
+  }
+  function showError(message) {
+    loadingEl.hidden = true;
+    successEl.hidden = true;
+    errorEl.hidden = false;
+    errorTextEl.textContent = message || 'Ett fel uppstod vid bekräftelsen. Försök igen senare.';
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var token = params.get('token');
+
+  if (!token) {
+    showError('Ogiltig eller saknad token.');
+  } else {
+    fetch(API_BASE + '/gdpr-delete-data', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'confirm', token: token })
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data && data.success) {
+          showSuccess();
+        } else {
+          showError(data && data.message);
+        }
+      })
+      .catch(function (err) {
+        console.error('GDPR Confirm error:', err);
+        showError('Ett fel uppstod vid bekräftelsen. Försök igen senare.');
+      });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lämna omdöme — KEKI Renovering AB</title>
+  <meta name="robots" content="noindex, follow">
+  <!--
+    Legacy route shim: the backend's review-request e-mails link to
+    /review?submission=...&token=... (the old site's route). The redesigned
+    site serves that page at /lamna-omdome.html, so this file forwards
+    already-sent and future links here, preserving the query string.
+    Query params can only be preserved via JS (a meta-refresh URL is a
+    fixed string), so there is no query-preserving fallback for the rare
+    visitor with JavaScript disabled — they get a plain link instead.
+    See finding: lamna-omdome.html review-link route mismatch.
+  -->
+  <script>
+    location.replace('lamna-omdome.html' + location.search + location.hash);
+  </script>
+</head>
+<body>
+  <p>Omdirigerar till <a href="lamna-omdome.html">Lämna omdöme</a>…</p>
+  <noscript>
+    <p>Klicka här för att fortsätta: <a href="lamna-omdome.html">Lämna omdöme</a></p>
+  </noscript>
+</body>
+</html>

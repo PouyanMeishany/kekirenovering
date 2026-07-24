@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="KEKI Renovering AB — Renovering i Järfälla &amp; Stockholm">
   <meta property="og:description" content="Kök, snickeri, tak, golv, målning och altan. ROT-avdrag — vi sköter ansökan. Kostnadsfri offert inom 24 timmar.">
-  <meta property="og:image" content="og-image.jpg">
+  <meta property="og:image" content="https://www.kekirenovering.se/og-image.jpg">
   <meta property="og:locale" content="sv_SE">
 
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -51,9 +51,11 @@
     </a>
     <nav class="links" aria-label="Huvudmeny">
       <a href="#tjanster">Tjänster</a>
-      <a href="#rot">ROT-avdrag</a>
       <a href="#projekt">Projekt</a>
+      <a href="#rot">ROT-avdrag</a>
       <a href="#process">Så jobbar vi</a>
+      <a href="about.html">Om oss</a>
+      <a href="faq.html">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <div class="spacer"></div>
@@ -62,7 +64,7 @@
       076 427 17 27
     </a>
     <a class="btn btn-primary" href="#kontakt">Få offert</a>
-    <button class="menu-btn" aria-label="Öppna meny" id="openMenu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <button class="menu-btn" aria-label="Öppna meny" id="openMenu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
   </div>
 </header>
 
@@ -76,9 +78,11 @@
   </div>
   <nav aria-label="Mobilmeny">
     <a href="#tjanster" data-close>Tjänster</a>
-    <a href="#rot" data-close>ROT-avdrag</a>
     <a href="#projekt" data-close>Projekt</a>
+    <a href="#rot" data-close>ROT-avdrag</a>
     <a href="#process" data-close>Så jobbar vi</a>
+    <a href="about.html" data-close>Om oss</a>
+    <a href="faq.html" data-close>FAQ</a>
     <a href="#kontakt" data-close>Kontakt</a>
   </nav>
   <a class="btn btn-primary btn-lg" href="#kontakt" data-close>Få kostnadsfri offert</a>
@@ -104,7 +108,7 @@
     </div>
     <div class="hero-visual">
       <img src="assets/images/kok.webp" alt="Nyrenoverat kök av KEKI Renovering" width="800" height="1000" fetchpriority="high">
-      <div class="stat"><b>500+</b><span>avslutade projekt</span></div>
+      <div class="stat"><b>Hundratals</b><span>nöjda kunder</span></div>
       <div class="label"><span>Kök · Snickeri · Tak · Golv</span><span>Järfälla</span></div>
     </div>
   </div>
@@ -185,7 +189,7 @@
         <h2>Spara 30 % — vi sköter hela ansökan</h2>
         <p>Få 30 % rabatt på arbetskostnaden när du anlitar oss. Vi hanterar hela ROT-ansökan åt dig — enkelt, tryggt och utan krångel.</p>
       </div>
-      <a class="btn btn-primary btn-lg" href="https://www.kekirenovering.se/rot-avdrag">Läs mer om ROT</a>
+      <a class="btn btn-primary btn-lg" href="rot-avdrag.html">Läs mer om ROT</a>
     </div>
   </div>
 </section>
@@ -199,12 +203,13 @@
       <p>Ett urval av våra senaste renoveringar och byggprojekt i Stockholmsområdet.</p>
     </div>
     <div class="filters reveal" id="filters" role="group" aria-label="Filtrera projekt">
-      <button class="chip active" data-f="alla">Alla</button>
-      <button class="chip" data-f="snickeri">Snickeri</button>
-      <button class="chip" data-f="tak">Tak</button>
-      <button class="chip" data-f="malning">Målning</button>
-      <button class="chip" data-f="golv">Golv</button>
-      <button class="chip" data-f="altan">Altan</button>
+      <button class="chip active" data-f="alla" aria-pressed="true">Alla</button>
+      <button class="chip" data-f="snickeri" aria-pressed="false">Snickeri</button>
+      <button class="chip" data-f="tak" aria-pressed="false">Tak</button>
+      <button class="chip" data-f="malning" aria-pressed="false">Målning</button>
+      <button class="chip" data-f="golv" aria-pressed="false">Golv</button>
+      <button class="chip" data-f="altan" aria-pressed="false">Altan</button>
+      <button class="chip" data-f="fix" aria-pressed="false">Små fix</button>
     </div>
     <div class="gal reveal" id="gallery"></div>
   </div>
@@ -287,9 +292,9 @@
         <!-- Honeypot — lämnas tomt av människor -->
         <div class="hp" aria-hidden="true"><label for="f-web">Webbplats</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <label class="consent"><input type="checkbox" id="f-consent" required>
-          <span>Jag godkänner att KEKI Renovering AB behandlar mina uppgifter för att kontakta mig. <a href="https://www.kekirenovering.se/privacy-policy" target="_blank" rel="noopener">Integritetspolicy</a></span></label>
+          <span>Jag godkänner att KEKI Renovering AB behandlar mina uppgifter för att kontakta mig. <a href="privacy-policy.html" target="_blank" rel="noopener">Integritetspolicy</a></span></label>
         <button class="btn btn-primary" type="submit" id="submitBtn">Skicka förfrågan</button>
-        <div class="form-error" id="formError" hidden></div>
+        <div class="form-error" id="formError" role="alert" hidden></div>
         <div class="fineprint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-4Z"/></svg>Dina uppgifter används endast för att kontakta dig.</div>
       </form>
     </div>
@@ -313,7 +318,7 @@
       </div>
       <div>
         <h4>Kundservice</h4>
-        <ul><li><a href="#kontakt">Få offert</a></li><li><a href="https://www.kekirenovering.se/rot-avdrag">Om ROT-avdrag</a></li><li><a href="https://www.kekirenovering.se/faq">Vanliga frågor</a></li><li><a href="https://www.kekirenovering.se/privacy-policy">Integritetspolicy</a></li><li><a href="https://www.kekirenovering.se/radera-mina-uppgifter">Radera mina uppgifter</a></li></ul>
+        <ul><li><a href="#kontakt">Få offert</a></li><li><a href="about.html">Om oss</a></li><li><a href="rot-avdrag.html">Om ROT-avdrag</a></li><li><a href="faq.html">Vanliga frågor</a></li><li><a href="lamna-omdome.html">Lämna omdöme</a></li><li><a href="privacy-policy.html">Integritetspolicy</a></li><li><a href="radera-mina-uppgifter.html">Radera mina uppgifter</a></li></ul>
       </div>
       <div>
         <h4>Kontakt</h4>
