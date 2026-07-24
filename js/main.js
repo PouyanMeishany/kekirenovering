@@ -100,19 +100,27 @@
   var filtersEl = document.getElementById('filters');
 
   if (gallery && filtersEl) {
+    var PAGE_SIZE = 8;
     var currentList = [];
     var currentIndex = 0;
+    var currentFilter = 'alla';
+    var currentPage = 1;
+    var pagerEl = document.getElementById('galleryPager');
 
-    function renderGallery(filter) {
+    function renderGallery() {
       gallery.innerHTML = '';
-      currentList = PROJECTS.filter(function (p) { return filter === 'alla' || p.c === filter; });
-      currentList.forEach(function (p, i) {
+      currentList = PROJECTS.filter(function (p) { return currentFilter === 'alla' || p.c === currentFilter; });
+      var pageCount = Math.max(1, Math.ceil(currentList.length / PAGE_SIZE));
+      if (currentPage > pageCount) currentPage = pageCount;
+      if (currentPage < 1) currentPage = 1;
+      var start = (currentPage - 1) * PAGE_SIZE;
+      currentList.slice(start, start + PAGE_SIZE).forEach(function (p, i) {
         var tile = document.createElement('div');
-        tile.className = 'tile' + (p.big && filter === 'alla' ? ' big' : '');
+        tile.className = 'tile';
         tile.setAttribute('role', 'button');
         tile.setAttribute('tabindex', '0');
         tile.setAttribute('aria-label', 'Visa bild i fullskärm: ' + p.t);
-        tile.dataset.index = String(i);
+        tile.dataset.index = String(start + i);
         var img = document.createElement('img');
         img.src = 'assets/images/' + p.img;
         img.alt = p.t;
@@ -126,8 +134,58 @@
         tile.appendChild(img); tile.appendChild(tag); tile.appendChild(cap);
         gallery.appendChild(tile);
       });
+      renderPager(pageCount);
     }
-    renderGallery('alla');
+
+    function renderPager(pageCount) {
+      if (!pagerEl) return;
+      pagerEl.innerHTML = '';
+      pagerEl.hidden = pageCount <= 1;
+      if (pageCount <= 1) return;
+
+      function makeBtn(label, ariaLabel, disabled, onClick) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'page-btn';
+        b.innerHTML = label;
+        b.setAttribute('aria-label', ariaLabel);
+        b.disabled = disabled;
+        b.addEventListener('click', onClick);
+        return b;
+      }
+
+      pagerEl.appendChild(makeBtn(
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>',
+        'Föregående sida', currentPage === 1,
+        function () { goToPage(currentPage - 1); }
+      ));
+      for (var n = 1; n <= pageCount; n++) {
+        (function (num) {
+          var b = makeBtn(String(num), 'Sida ' + num, false, function () { goToPage(num); });
+          if (num === currentPage) {
+            b.classList.add('active');
+            b.setAttribute('aria-current', 'page');
+          }
+          pagerEl.appendChild(b);
+        })(n);
+      }
+      pagerEl.appendChild(makeBtn(
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>',
+        'Nästa sida', currentPage === pageCount,
+        function () { goToPage(currentPage + 1); }
+      ));
+    }
+
+    function goToPage(page) {
+      if (page === currentPage) return;
+      currentPage = page;
+      renderGallery();
+      // keep the grid in view when the new page is shorter than the old one
+      var top = gallery.getBoundingClientRect().top;
+      if (top < 0) gallery.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+
+    renderGallery();
 
     filtersEl.addEventListener('click', function (e) {
       var btn = e.target.closest('.chip');
@@ -135,7 +193,9 @@
       filtersEl.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
       btn.classList.add('active');
       btn.setAttribute('aria-pressed', 'true');
-      renderGallery(btn.dataset.f);
+      currentFilter = btn.dataset.f;
+      currentPage = 1;
+      renderGallery();
     });
 
     /* ---------- lightbox ---------- */

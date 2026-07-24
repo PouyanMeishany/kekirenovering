@@ -154,6 +154,14 @@ section{padding:96px 0}
   background:var(--brand);padding:6px 9px;border-radius:20px;z-index:1}
 .tile.big{grid-column:span 2;grid-row:span 2}
 .tile:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.pager{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:30px}
+.page-btn{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 12px;
+  font:700 14px/1 var(--sans);font-variant-numeric:tabular-nums;color:var(--text-soft);
+  background:transparent;border:1px solid var(--border);border-radius:2px;cursor:pointer;transition:.2s}
+.page-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.page-btn:hover:not(:disabled):not(.active){border-color:var(--text);color:var(--text)}
+.page-btn.active{background:var(--brand);border-color:var(--brand);color:var(--on-brand);cursor:default}
+.page-btn:disabled{opacity:.35;cursor:default}
 
 /* ---------- lightbox ---------- */
 body.lb-lock{overflow:hidden}
